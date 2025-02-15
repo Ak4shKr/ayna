@@ -7,7 +7,13 @@ config();
 import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.LOCAL_FRONTEND,
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
