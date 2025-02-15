@@ -35,7 +35,7 @@ export const logoutUser = () => {
   }, 500);
 };
 
-export const deleteChatHistory = async () => {
+export const deleteChatHistory = async (setMessages) => {
   try {
     const response = await service.delete("/messages", {
       headers: { Authorization: `${localStorage.getItem("token")}` },
@@ -47,9 +47,10 @@ export const deleteChatHistory = async () => {
         color: "green",
         position: "top-center",
       });
-      setTimeout(() => {
-        window.location.reload();
-      }, 300);
+      setMessages([]);
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 300);
     }
   } catch (error) {
     console.error("Error deleting chat history:", error);
