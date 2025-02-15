@@ -89,7 +89,7 @@ const Chat = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-900">
+      <div className="flex items-center justify-center h-screen bg-gray-900 opacity-50">
         <Loader color="blue" type="bars" size="xs" />
       </div>
     );
