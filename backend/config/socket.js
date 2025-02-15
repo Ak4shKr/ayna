@@ -7,7 +7,7 @@ export const socket = (app) => {
   const server = http.createServer(app);
   const io = new Server(server, {
     cors: {
-      origin: process.env.LOCAL_FRONTEND,
+      origin: process.env.PROD_FRONTEND,
       methods: ["GET", "POST"],
     },
   });

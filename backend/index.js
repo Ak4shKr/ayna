@@ -9,7 +9,7 @@ import userRoutes from "./routes/userRoutes.js";
 const app = express();
 app.use(
   cors({
-    origin: process.env.LOCAL_FRONTEND,
+    origin: process.env.PROD_FRONTEND,
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
   })
