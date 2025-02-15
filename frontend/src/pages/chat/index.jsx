@@ -69,7 +69,7 @@ const Chat = () => {
       title: "Delete Chat",
       message:
         "Are you sure you want to delete your chat History? This action is irreversible.",
-      action: () => deleteChatHistory(setMessages),
+      action: () => deleteChatHistory(setMessages, setLoading),
     });
   };
 

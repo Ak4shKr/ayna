@@ -35,8 +35,9 @@ export const logoutUser = (navigate) => {
   }, 500);
 };
 
-export const deleteChatHistory = async (setMessages) => {
+export const deleteChatHistory = async (setMessages, setLoading) => {
   try {
+    setLoading(true);
     const response = await service.delete("/messages", {
       headers: { Authorization: `${localStorage.getItem("token")}` },
     });
@@ -48,6 +49,7 @@ export const deleteChatHistory = async (setMessages) => {
         position: "top-center",
       });
       setMessages([]);
+      setLoading(false);
       // setTimeout(() => {
       //   window.location.reload();
       // }, 300);
