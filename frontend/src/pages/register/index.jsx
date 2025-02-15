@@ -51,6 +51,8 @@ const Register = () => {
         message: error.response?.data?.error || "Something went wrong",
         color: "red",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
