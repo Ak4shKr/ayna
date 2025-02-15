@@ -4,6 +4,7 @@ import io from "socket.io-client";
 import { Loader, Text, Tooltip } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import { logoutUser, deleteChatHistory, fetchMessages } from "./hook";
+import { useNavigate } from "react-router-dom";
 
 // Socket setup
 const socket = io("https://ayna.onrender.com/");
@@ -15,6 +16,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const messagesEndRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -59,7 +61,7 @@ const Chat = () => {
       title: "Logout",
       message:
         "Are you sure you want to logout? You will be redirected to the login.",
-      action: logoutUser,
+      action: () => logoutUser(navigate),
     });
   };
   const handleDelete = () => {

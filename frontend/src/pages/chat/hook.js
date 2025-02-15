@@ -22,7 +22,7 @@ export const fetchMessages = async (setMessages, setLoading) => {
   }
 };
 
-export const logoutUser = () => {
+export const logoutUser = (navigate) => {
   localStorage.removeItem("user");
   localStorage.removeItem("token");
   notifications.show({
@@ -31,7 +31,7 @@ export const logoutUser = () => {
     color: "green",
   });
   setTimeout(() => {
-    window.location.href = "/login";
+    navigate("/login");
   }, 500);
 };
 
