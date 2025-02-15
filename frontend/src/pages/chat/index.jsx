@@ -8,7 +8,7 @@ import { logoutUser, deleteChatHistory, fetchMessages } from "./hook";
 // Socket setup
 const socket = io("https://ayna.onrender.com/");
 
-function Discussion() {
+const Chat = () => {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const userId = user?.id || null;
   const [message, setMessage] = useState("");
@@ -184,6 +184,6 @@ function Discussion() {
       </div>
     </div>
   );
-}
+};
 
-export default Discussion;
+export default Chat;
