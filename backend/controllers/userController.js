@@ -20,7 +20,7 @@ export const userRegister = async (req, res) => {
   await user.save();
   res.status(201).json({
     status: true,
-    message: "User registered successfully",
+    message: "User registered successfully, please login!",
     data: { user: userSafedata },
   });
 };

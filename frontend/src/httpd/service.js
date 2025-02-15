@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: "http://localhost:5000/api/users",
+  baseURL: "https://ayna.onrender.com/api/users",
   withCredentials: true,
   headers: {
     "Content-type": "application/json",

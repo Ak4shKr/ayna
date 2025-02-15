@@ -6,7 +6,7 @@ import { modals } from "@mantine/modals";
 import { logoutUser, deleteChatHistory, fetchMessages } from "./hook";
 
 // Socket setup
-const socket = io("http://localhost:5000/");
+const socket = io("https://ayna.onrender.com/");
 
 function Discussion() {
   const user = JSON.parse(localStorage.getItem("user") || "{}");

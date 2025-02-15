@@ -2,10 +2,10 @@ import { Button, Input, PasswordInput } from "@mantine/core";
 import { useState } from "react";
 import service from "../../httpd/service";
 import { notifications } from "@mantine/notifications";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-  //global state for loading spinner
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -44,6 +44,7 @@ const Register = () => {
         });
         setLoading(false);
       }
+      navigate("/login");
     } catch (error) {
       notifications.show({
         title: "Registration Error",
